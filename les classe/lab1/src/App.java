@@ -16,8 +16,8 @@ public class App {
          * System.out.println("chhal 3ndk mn ktab"); int n = sc.nextInt();
          * ArrayList<livre> HAJA = new ArrayList<>(); for (int i = 0; i < n; i++) {
          * System.out.println(" atini asm le livre "); String titre = sc.next();
-         * System.out.println("le nombre de pages "); int nb = sc.nextInt(); livre ok =
-         * new livre(nb, titre); HAJA.add(ok); } for (livre ok : HAJA) { ok.afficher();
+         * System.out.println("le nombre de pages "); int nb = sc.nextInt(); livre ok
+         * =new livre(nb, titre); HAJA.add(ok); } for (livre ok : HAJA) { ok.afficher();
          * }
          */
         /**
@@ -27,14 +27,48 @@ public class App {
          * .totale() qui retourne la somme de deux valeurs
          */
 
+        /**
+         * Scanner sc = new Scanner(System.in); System.out.println("la face lwla mdhali
+         * : "); int a = sc.nextInt(); System.out.println("la face 2em doka :"); int b =
+         * sc.nextInt(); domino dom = new domino(a, b); dom.affiche();
+         * System.out.println("la somme : " + dom.som());
+         */
+
+        /**
+         * : Écrivez une classe CompteBancaire. Les objets sont initialisés avec le nom
+         * du titu- laire et le solde. L’argument solde doit être facultatif et avoir
+         * une valeur prédéfinie zéro. Ajoutez deux méthodes .depot(somme) et
+         * .retrait(somme) pour changer le solde. Ajoutez une méthode .affiche() qui
+         * montre le solde courant
+         */
         Scanner sc = new Scanner(System.in);
-        System.out.println("la face lwla mdhali :   ");
-        int a = sc.nextInt();
-        System.out.println("la face 2em doka :");
-        int b = sc.nextInt();
-        domino dom = new domino(a, b);
-        dom.affiche();
-        System.out.println("la somme : " + dom.som());
+        System.out.println("atini 3adad les compt ");
+        int n = sc.nextInt();
+        ArrayList<comptebancaire> lista = new ArrayList<>();
+
+        for (int i = 0; i < n; i++) {
+            System.out.println("atini asm siyd ");
+            String nom = sc.next();
+            System.out.println("atini solde ");
+            double solde = sc.nextDouble();
+            comptebancaire cb = new comptebancaire(nom, solde);
+            lista.add(cb);
+        }
+        for (comptebancaire cb : lista) {
+            cb.affiche();
+        }
+        System.out.println("asssm mol lcompt :         ");
+        String nom = sc.next();
+        System.out.println("la som lihbit tzidha  :         ");
+        double som = sc.nextDouble();
+        for (comptebancaire cb : lista) {
+            if (cb.getpop().equals(nom)) {
+                cb.depot(som);
+            }
+        }
+        for (comptebancaire cb : lista) {
+            cb.affiche();
+        }
 
     }
 }
