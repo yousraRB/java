@@ -11,14 +11,12 @@ public class App {
          */
 
         /**
-         * Scanner sc = new Scanner(System.in);
-         * 
-         * System.out.println("chhal 3ndk mn ktab"); int n = sc.nextInt();
-         * ArrayList<livre> HAJA = new ArrayList<>(); for (int i = 0; i < n; i++) {
-         * System.out.println(" atini asm le livre "); String titre = sc.next();
-         * System.out.println("le nombre de pages "); int nb = sc.nextInt(); livre ok
-         * =new livre(nb, titre); HAJA.add(ok); } for (livre ok : HAJA) { ok.afficher();
-         * }
+         * Scanner sc = new Scanner(System.in); System.out.println("chhal 3ndk mn
+         * ktab"); int n = sc.nextInt(); ArrayList<livre> HAJA = new ArrayList<>(); for
+         * (int i = 0; i < n; i++) { System.out.println(" atini asm le livre "); String
+         * titre = sc.next(); System.out.println("le nombre de pages "); int nb =
+         * sc.nextInt(); livre ok =new livre(nb, titre); HAJA.add(ok); } for (livre ok :
+         * HAJA) { ok.afficher(); }
          */
         /**
          * crivez une classe Domino pour représenter une pièce de domino. Les objet sont
@@ -28,9 +26,11 @@ public class App {
          */
 
         /**
-         * Scanner sc = new Scanner(System.in); System.out.println("la face lwla mdhali
-         * : "); int a = sc.nextInt(); System.out.println("la face 2em doka :"); int b =
-         * sc.nextInt(); domino dom = new domino(a, b); dom.affiche();
+         * Scanner sc = new Scanner(System.in); System.out.println("la face lwla mdhali:
+         * ");
+         * 
+         * int a = sc.nextInt(); System.out.println("la face 2em doka :"); int b
+         * =sc.nextInt(); domino dom; dom =new domino(a,b); dom.affiche();
          * System.out.println("la somme : " + dom.som());
          */
 
@@ -41,34 +41,40 @@ public class App {
          * .retrait(somme) pour changer le solde. Ajoutez une méthode .affiche() qui
          * montre le solde courant
          */
+        /**
+         * Scanner sc = new Scanner(System.in); System.out.println("atini 3adad les
+         * compt "); int n = sc.nextInt(); ArrayList<comptebancaire> lista = new
+         * ArrayList<>();
+         * 
+         * for (int i = 0; i < n; i++) { System.out.println("atini asm siyd "); String
+         * nom = sc.next(); System.out.println("atini solde "); double solde =
+         * sc.nextDouble(); comptebancaire cb = new comptebancaire(nom, solde);
+         * lista.add(cb); } for (comptebancaire cb : lista) { cb.affiche(); }
+         * System.out.println("asssm mol lcompt : "); String nom = sc.next();
+         * System.out.println("la som lihbit tzidha : "); double som = sc.nextDouble();
+         * for (comptebancaire cb : lista) { if (cb.getpop().equals(nom)) {
+         * cb.depot(som); } } for (comptebancaire cb : lista) { cb.affiche(); }
+         **/
+        /**
+         * crivez une classe TableMultiplication qui crée des objets initialisés avec un
+         * nombre entier. Ajouter une méthode .prochain() qui renvoie à chaque appel un
+         * nouveau terme de la table de multiplication correspondante
+         */
+
         Scanner sc = new Scanner(System.in);
-        System.out.println("atini 3adad les compt ");
+        System.out.println("aktb le nombre ");
+        int choix = 1;
         int n = sc.nextInt();
-        ArrayList<comptebancaire> lista = new ArrayList<>();
 
-        for (int i = 0; i < n; i++) {
-            System.out.println("atini asm siyd ");
-            String nom = sc.next();
-            System.out.println("atini solde ");
-            double solde = sc.nextDouble();
-            comptebancaire cb = new comptebancaire(nom, solde);
-            lista.add(cb);
-        }
-        for (comptebancaire cb : lista) {
-            cb.affiche();
-        }
-        System.out.println("asssm mol lcompt :         ");
-        String nom = sc.next();
-        System.out.println("la som lihbit tzidha  :         ");
-        double som = sc.nextDouble();
-        for (comptebancaire cb : lista) {
-            if (cb.getpop().equals(nom)) {
-                cb.depot(som);
-            }
-        }
-        for (comptebancaire cb : lista) {
-            cb.affiche();
-        }
+        tableMULT tm;
+        tm = new tableMULT(n);
 
+        while (choix == 1) {
+            tm.prochaine();
+            System.out.println(
+                    "ida rak hab zid dir la multiplicatin de" + n + "avec le prochaine nombre dkhel 1 sinon dir 0");
+            choix = sc.nextInt();
+
+        }
     }
 }
