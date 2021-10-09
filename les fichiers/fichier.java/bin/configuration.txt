@@ -1,0 +1,10 @@
+database
+ host: localhost
+ user: root
+ password: azerty
+log
+ file: /var/log/app.log
+ level: debug
+security
+ cipher: qwerty
+ algo: aes
